@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.8;
+  background-color: darkslategray;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+form {
+  font-size: 1.5rem;
+  line-height: 3;
+  text-align: center;
+  border: 3px solid;
+  width: 50%;
+  height: 250px;
+  margin: 300px;
+  margin-top: 50px;
+  border-radius: 20px;
+}
+label,
+input {
+  font-size: inherit;
+}
+#submit {
+  background-color: goldenrod;
+  border-radius: 15px;
+  font-size: 1.8rem;
+  border-style: none;
+  cursor: pointer;
+  padding: 12px;
+  transition: all 0.25s;
+}
+
+#submit:hover {
+  padding: 16px;
+  opacity: 0.8;
+  text-shadow: 2px;
+}
