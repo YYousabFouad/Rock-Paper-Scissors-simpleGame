@@ -44,7 +44,10 @@ function playGame(playerMove) {
     score.Ties += 1;
   }
   localStorage.setItem('score', JSON.stringify(score));
-  alert(`You Picked ${playerMove},The Computer Picked ${computerMove}
 
-Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`);
+  document.querySelector(
+    '.game-result',
+  ).innerHTML = `You Picked ${playerMove},The Computer Picked ${computerMove}
+
+Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
 }

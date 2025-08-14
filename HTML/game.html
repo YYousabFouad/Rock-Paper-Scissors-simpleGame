@@ -38,13 +38,14 @@
 ">
           <img src="/IMG/Scissors.png" alt="Scissors image" />
         </button>
+        <div class="game-result"></div>
         <button
           onclick="
         score.Wins=0;
         score.Losses=0;
         score.Ties=0;
         localStorage.removeItem('score');
-        alert(`Wins:${score.Wins} ,Losses:${score.Losses}, Ties:${score.Ties}`);
+        document.querySelector('.game-result').innerHTML = 'Score has been reset.';
         "
           class="reset-button">
           Reset Score
