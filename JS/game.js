@@ -8,11 +8,11 @@ function pickComputerMove() {
   const randomNumber = Math.random();
   let computerMove = '';
   if (randomNumber >= 0 && randomNumber <= 1 / 3) {
-    computerMove = 'rock';
+    computerMove = 'Rock';
   } else if (randomNumber > 1 / 3 && randomNumber <= 2 / 3) {
     computerMove = 'paper';
   } else {
-    computerMove = 'scissors';
+    computerMove = 'Scissors';
   }
   return computerMove;
 }
@@ -22,15 +22,15 @@ function playGame(playerMove) {
   let result = '';
   if (computerMove === playerMove) {
     result = 'Tie';
-  } else if (computerMove === 'rock' && playerMove === 'paper') {
+  } else if (computerMove === 'Rock' && playerMove === 'paper') {
     result = 'You Win';
-  } else if (computerMove === 'rock' && playerMove === 'scissors') {
+  } else if (computerMove === 'Rock' && playerMove === 'Scissors') {
     result = 'You Lose';
-  } else if (computerMove === 'paper' && playerMove === 'rock') {
+  } else if (computerMove === 'paper' && playerMove === 'Rock') {
     result = 'You Lose';
-  } else if (computerMove === 'paper' && playerMove === 'scissors') {
+  } else if (computerMove === 'paper' && playerMove === 'Scissors') {
     result = 'You Win';
-  } else if (computerMove === 'scissors' && playerMove === 'rock') {
+  } else if (computerMove === 'Scissors' && playerMove === 'Rock') {
     result = 'You Win';
   } else {
     result = 'You Lose';
@@ -44,10 +44,29 @@ function playGame(playerMove) {
     score.Ties += 1;
   }
   localStorage.setItem('score', JSON.stringify(score));
-
-  document.querySelector(
-    '.game-result',
-  ).innerHTML = `You Picked ${playerMove},The Computer Picked ${computerMove}
-
+  if (playerMove === 'paper') {
+    document.querySelector(
+      '.game-result',
+    ).innerHTML = `You <img src="../IMG/${playerMove}.jpg"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.png">
+<br>
 Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
+  } else if (computerMove === 'paper') {
+    document.querySelector(
+      '.game-result',
+    ).innerHTML = `You <img src="../IMG/${playerMove}.png"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.jpg">
+<br>
+Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
+  } else if (computerMove === 'paper' && playerMove === 'paper') {
+    document.querySelector(
+      '.game-result',
+    ).innerHTML = `You <img src="../IMG/${playerMove}.jpg"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.jpg">
+<br>
+Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
+  } else {
+    document.querySelector(
+      '.game-result',
+    ).innerHTML = `You <img src="../IMG/${playerMove}.png"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.png">
+<br>
+Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
+  }
 }
