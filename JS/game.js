@@ -44,10 +44,10 @@ function playGame(playerMove) {
     score.Ties += 1;
   }
   localStorage.setItem('score', JSON.stringify(score));
-  if (playerMove === 'paper') {
-    document.querySelector(
+  if (computerMove === 'paper' && playerMove === 'paper') {
+   document.querySelector(
       '.game-result',
-    ).innerHTML = `You <img src="../IMG/${playerMove}.jpg"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.png">
+    ).innerHTML = `You <img src="../IMG/${playerMove}.jpg"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.jpg">
 <br>
 Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
   } else if (computerMove === 'paper') {
@@ -56,10 +56,10 @@ Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
     ).innerHTML = `You <img src="../IMG/${playerMove}.png"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.jpg">
 <br>
 Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
-  } else if (computerMove === 'paper' && playerMove === 'paper') {
+  } else if (playerMove === 'paper') {
     document.querySelector(
       '.game-result',
-    ).innerHTML = `You <img src="../IMG/${playerMove}.jpg"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.jpg">
+    ).innerHTML = `You <img src="../IMG/${playerMove}.jpg"></img>&nbsp;&nbsp; Computer <img src="../IMG/${computerMove}.png">
 <br>
 Wins:${score.Wins},Losses:${score.Losses},Ties:${score.Ties}`;
   } else {
