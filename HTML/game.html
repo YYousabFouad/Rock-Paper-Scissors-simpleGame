@@ -7,7 +7,8 @@
     <meta name="description" content="A simple rock, paper, scissors game" />
     <meta
       name="keywords"
-      content="HTML, CSS, JavaScript, Rock Paper Scissors" />
+      content="HTML, CSS, JavaScript, Rock Paper Scissors"
+    />
     <link rel="stylesheet" href="/CSS/game.css" />
     <link rel="icon" href="/IMG/rock-paper-scissors.png " />
     <title>Rock,Paper,and Scissors Game</title>
@@ -20,22 +21,25 @@
       <div class="game-buttons">
         <button
           onclick="
-         playGame('rock');
+         playGame('Rock');
       
-         ">
+         "
+        >
           <img src="/IMG/Rock.png" alt="Rock image" />
         </button>
         <button
           onclick="
          playGame('paper');
          
-         ">
+         "
+        >
           <img src="/IMG/paper.jpg" alt="Paper image" />
         </button>
         <button
           onclick="
-          playGame('scissors');
-">
+          playGame('Scissors');
+"
+        >
           <img src="/IMG/Scissors.png" alt="Scissors image" />
         </button>
         <div class="game-result"></div>
@@ -47,7 +51,8 @@
         localStorage.removeItem('score');
         document.querySelector('.game-result').innerHTML = 'Score has been reset.';
         "
-          class="reset-button">
+          class="reset-button"
+        >
           Reset Score
         </button>
       </div>
