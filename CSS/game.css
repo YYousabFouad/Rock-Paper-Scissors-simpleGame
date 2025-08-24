@@ -9,7 +9,6 @@ body {
   font-weight: 600;
   font-family: monospace;
   background-color: aquamarine;
-  
 }
 h1 {
   text-align: center;
@@ -52,10 +51,9 @@ h1 {
   font-size: 1.5rem;
   margin-top: 0px;
   color: #333;
-  
 }
 
-img{
-  width:50px;
- vertical-align: middle;
+img {
+  width: 50px;
+  vertical-align: middle;
 }
